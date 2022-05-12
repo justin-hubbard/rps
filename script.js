@@ -1,4 +1,3 @@
-// Your JavaScript goes here!
 function computerPlay()
 {
   const plays = ['rock', 'paper','scissors'];
