@@ -2,87 +2,16 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  <title>Rock Paper Scissors</title>
+  <script src="script.js" defer> </script>
 </head>
 <body>
-  <script>
-    // Your JavaScript goes here!
-    function computerPlay()
-    {
-      const plays = ['rock', 'paper','scissors'];
-
-      let c = Math.floor(Math.random(2) * 3);
-      //console.log("cpu Plays " + plays[c] + c);
-      return plays[c];
-    }
-
-    function playRound(playerSelection, computerSelection)
-    {
-        //console.log("cpuPlay");
-
-        // 0 = tie, 1 = p1 wins, 2 = cpu wins
-
-        let result = 0;
-
-        if (playerSelection != computerSelection)
-        {
-          if (playerSelection == 'rock')
-          {
-            if (computerSelection == 'paper')
-            { result = 2;}
-            else result = 1;
-          }
-          if (playerSelection == 'paper')
-          {
-            if (computerSelection == 'scizzors')
-            { result = 2;}
-            else result = 1;
-          }
-          if (playerSelection == 'scissors')
-          {
-            if (computerSelection == 'rock')
-            { result = 2;}
-            else result = 1;
-          }
-        }
-
-        if (result == 0)
-        console.log("It's a tie!");
-        if (result == 1)
-        console.log("You win! " + playerSelection + " beats " + computerSelection);
-        if (result == 2)
-        console.log("You lose! " + computerSelection + " beats " + playerSelection);
-
-        return result;
-    }
-
-    function game()
-    {
-        let playerScore = 0;
-        let cpuScore = 0;
-
-        for (let i = 0; i < 5; i++)
-        {
-            let result = playRound(prompt("What is your play?"), computerPlay())
-            
-            if (result == 1)
-              playerScore++;
-            if (result == 2)
-              cpuScore++;
-
-            console.log(playerScore);
-            console.log(cpuScore);
-        }
-        if ( playerScore > cpuScore)
-          console.log("You win!");
-        if ( playerScore < cpuScore)
-          console.log("You lose!")
-        if (playerScore == cpuScore)
-          console.log("A tie??");
-    }
-
-    game();
-
-  </script>
+  <button id="rock">Rock</button>
+  <button id="paper">Paper</button>
+  <button id="scissors">Scissors</button>
+  <div id="cpu">Cpu plays: ----</div>
+  <div id="pScore">Player Score: 0</div>
+  <div id="cScore">CPU Score: 0</div>
+  <div id="outcome">?</div>
 </body>
 </html>
